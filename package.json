@@ -21,8 +21,6 @@
     "gsap": "^2.0.1",
     "lodash": "^4.17.10",
     "paper": "^0.11.5",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0",
     "react-transition-group": "^1.2.1"
   },
   "homepage": "http://jhdalal.github.io/jd-react-components/",
@@ -119,6 +117,8 @@
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
     "promise": "8.0.1",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
     "raf": "3.4.0",
     "babel-cli": "^6.26.0",
     "chalk": "^1.1.3",
