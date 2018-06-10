@@ -7,7 +7,7 @@ import ReactCSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 import './path.css';
 
-const Draggable = window.Draggable;
+//const Draggable = window.Draggable;
 
 class Path extends React.Component {
 
@@ -661,56 +661,56 @@ class Indicator extends React.Component {
 		// this.initDraggable();
 	}
 
-	initDraggable = () => {
+	// initDraggable = () => {
 
-		const indicator = this.refs.indicator;
+	// 	const indicator = this.refs.indicator;
 
-		const that = this;
+	// 	const that = this;
 
-		// Autoscroll size
-		let autoScrollSize;
-		const screenWidth = this.props.viewWidth / 2;
-		if ( screenWidth >= 1200 ) {
-			autoScrollSize = 250;
-		} else if ( screenWidth >= 500 ) {
-			autoScrollSize = 100;
-		} else {
-			autoScrollSize = 50;
-		}
+	// 	// Autoscroll size
+	// 	let autoScrollSize;
+	// 	const screenWidth = this.props.viewWidth / 2;
+	// 	if ( screenWidth >= 1200 ) {
+	// 		autoScrollSize = 250;
+	// 	} else if ( screenWidth >= 500 ) {
+	// 		autoScrollSize = 100;
+	// 	} else {
+	// 		autoScrollSize = 50;
+	// 	}
 
-		this.draggable = Draggable.create(indicator, {
-			bounds: '.path-list',
-			type: 'left',
-			lockAxis: true,
-			throwProps: true,
-			throwResistance: 9999,
-			snap: this.props.pointSnap,
-			cursor: null,
-			autoScroll: 1.35,
-			autoScrollMarginRight: autoScrollSize,
-			autoScrollMarginLeft: autoScrollSize,
-			autoScrollMarginTop: 0,
-			autoScrollMarginBottom: 0,
-			onPress: () => {
-				this.props.setDragging('drag-start');
-				this.props.setDragging('dragging');
-			},
-			onRelease: () => {
-				this.props.setDragging('not-dragging');
-			},
-			onDrag: function(){
-				that.props.setDragging('moved');
-				that.props.handleDrag(this);
-			},
-			onThrowUpdate: function(){
-				that.props.handleDrag(this);
-			},
-			onThrowComplete: function(){
-				that.props.handleDragEnd(this);
-				that.props.setDragging('drag-end');
-			},
-		});
-	}
+	// 	this.draggable = Draggable.create(indicator, {
+	// 		bounds: '.path-list',
+	// 		type: 'left',
+	// 		lockAxis: true,
+	// 		throwProps: true,
+	// 		throwResistance: 9999,
+	// 		snap: this.props.pointSnap,
+	// 		cursor: null,
+	// 		autoScroll: 1.35,
+	// 		autoScrollMarginRight: autoScrollSize,
+	// 		autoScrollMarginLeft: autoScrollSize,
+	// 		autoScrollMarginTop: 0,
+	// 		autoScrollMarginBottom: 0,
+	// 		onPress: () => {
+	// 			this.props.setDragging('drag-start');
+	// 			this.props.setDragging('dragging');
+	// 		},
+	// 		onRelease: () => {
+	// 			this.props.setDragging('not-dragging');
+	// 		},
+	// 		onDrag: function(){
+	// 			that.props.setDragging('moved');
+	// 			that.props.handleDrag(this);
+	// 		},
+	// 		onThrowUpdate: function(){
+	// 			that.props.handleDrag(this);
+	// 		},
+	// 		onThrowComplete: function(){
+	// 			that.props.handleDragEnd(this);
+	// 			that.props.setDragging('drag-end');
+	// 		},
+	// 	});
+	// }
 
 	componentDidMount() {
 
@@ -720,9 +720,9 @@ class Indicator extends React.Component {
 	componentDidUpdate(prevProps) {
 
 		if ( prevProps.pointSnap !== this.props.pointSnap ) {
-			if ( this.draggable && this.draggable.length > 0 ) {
-				this.draggable[0].vars.snap = this.props.pointSnap;
-			}
+			// if ( this.draggable && this.draggable.length > 0 ) {
+			// 	this.draggable[0].vars.snap = this.props.pointSnap;
+			// }
 		}
 
 		if ( prevProps.viewWidth !== this.props.viewWidth ) {
